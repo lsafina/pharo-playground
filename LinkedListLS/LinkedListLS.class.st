@@ -98,21 +98,6 @@ LinkedListLS >> collect: aBlock [
 	^ list
 ]
 
-{ #category : #comparing }
-LinkedListLS >> contains: aValue [
-	"returns true if the list contains a node with aValue, false otherwise"	
-			
-	| tempNode |
-	
-	tempNode := first.
-	[ tempNode hasNext] whileTrue: 
-		[ tempNode value = aValue ifTrue: [^ true]. tempNode := tempNode nextNode].
-	
-	tempNode value = aValue ifTrue: [^ true].
-	
-	^false.
-]
-
 { #category : #enumerating }
 LinkedListLS >> detect: aBlock [
 	"returns a first element in the list which has satisfied the evaluation of the aBlock condition or nil if there is no such element"
@@ -275,14 +260,6 @@ LinkedListLS >> removeFirst [
 	^ self
 	
 	
-]
-
-{ #category : #removing }
-LinkedListLS >> removeHead [
-	"comment stating purpose of instance-side method"
-	"scope: class-variables  &  instance-variables"	
-			
-	first := first nextNode.
 ]
 
 { #category : #removing }
